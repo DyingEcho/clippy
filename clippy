@@ -27,7 +27,7 @@ def go():
 				os.system("pkill Numbers")
 			elif "Powerpoint" in processes:
 				time.sleep(900)
-				os.system("pkill Powerpoint")
+				os.system("pkill PowerPoint")
 
 
 if __file__ in str(cronJobs):
