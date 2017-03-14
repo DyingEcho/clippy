@@ -30,7 +30,7 @@ def go():
 				os.system("pkill PowerPoint")
 
 
-if __file__ in str(cronJobs):
+if os.path.realpath(__file__) in str(cronJobs):
 	go()
 else:
 	# Add to crontab
