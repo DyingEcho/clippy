@@ -11,7 +11,7 @@ psCommand	= ("ps -u " + activeUser)												# command to check running proces
 def go():
 	while 7 == 7:
 		processes = str(subprocess.check_output(psCommand, shell = True))			# check running processes
-		doIt = random.choice(range(2))												# gen no between 0 and 3
+		doIt = randrange(0, 2)														# gen no between 0 and 2
 		if doIt == 0:																# If doIt is 0 (33.3 percent of the time)
 			if "Word" in processes:
 				time.sleep(900)														# wait 15 mins
