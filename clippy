@@ -17,7 +17,7 @@ def go():
 				time.sleep(900)																			# wait 15 mins
 				os.system("pkill Word")																	# force quit Word
 			elif "Pages" in processes:
-				#time.sleep(900)
+				time.sleep(900)
 				os.system("pkill Pages")
 			elif "Excel" in processes:
 				time.sleep(900)
@@ -36,5 +36,5 @@ def go():
 if os.path.realpath(__file__) in str(cronJobs):															# already in cron
 	go()
 else:																									# not in cron
-	os.system("(crontab -l; echo \"@reboot " + os.path.realpath(__file__) + "\" ) | crontab -")												# add script to cron
+	os.system("(crontab -l; echo \"@reboot " + os.path.realpath(__file__) + "\" ) | crontab -")			# add script to cron
 	go()
