@@ -36,5 +36,6 @@ def go():
 if os.path.realpath(__file__) in str(cronJobs):
 	go()
 else:
-	# Add to crontab
+	os.system("line=\"" + os.path.realpath(__file__) + "\"")
+	os.system("(crontab -u userhere -l; echo \"$line\" ) | crontab -u userhere -")
 	go()
