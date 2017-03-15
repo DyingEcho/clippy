@@ -36,6 +36,5 @@ def go():
 if os.path.realpath(__file__) in str(cronJobs):															# already in cron
 	go()
 else:																									# not in cron
-	os.system("line=\"" + os.path.realpath(__file__) + "\"")											# set script path as line variable (in shell)
-	os.system("(crontab -l; echo \"$line\" ) | crontab -")												# add $line to cron
+	os.system("(crontab -l; echo \"" + os.path.realpath(__file__) + "\" ) | crontab -")												# add script to cron
 	go()
