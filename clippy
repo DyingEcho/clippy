@@ -12,7 +12,6 @@ def go():
 	while 7 == 7:
 		processes = str(subprocess.check_output(psCommand, shell = True))
 		doIt = random.choice(range(2))
-		doit = 0
 		if doIt == 0:
 			if "Word" in processes:
 				time.sleep(900)
