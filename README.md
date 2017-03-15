@@ -2,11 +2,11 @@
 
 Clippy is malware that, once installed and run, will occasionally quit productivity programs (such as MS Word) while you're doing work on them. This, combined with most people's tendency to only save once finished, can have huge effects on productivity - and since it adds itself to cron at first run, it is almost *impossible* to debug for anyone non-technically inclined.
 
-Please note that this *is* active malware and so take care if testing it on your own machine. (Removal instructions) [#Removal-Instructions] are below.
+Please note that this *is* active malware and so take care if testing it on your own machine. [Removal instructions] (#Removal-Instructions) are below.
 
 ## Installation instructions
 
-1. Download the (clippy) [../../blop/clippy] executable file and save it somewhere obscure (like Application Support!)
+1. Download the [clippy] (../../blop/clippy) executable file and save it somewhere obscure (like Application Support!)
 2. Add executable permissions to it with `chmod +x ./clippy`
 3. Run it (or manually add it to `crontab`. It's up to you.) You can exit with `^C` after a few seconds.
 4. Enjoy.
