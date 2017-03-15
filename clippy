@@ -28,6 +28,9 @@ def go():
 			elif "Powerpoint" in processes:
 				time.sleep(900)
 				os.system("pkill PowerPoint")
+			elif "Keynote" in processes:
+				time.sleep(900)
+				os.system("pkill Keynote")
 
 
 if os.path.realpath(__file__) in str(cronJobs):
