@@ -4,18 +4,18 @@ import subprocess
 import time
 import random
 
-cronJobs	= subprocess.check_output("crontab -l", shell = True)					# jobs stored in cron
-activeUser	= str(subprocess.check_output("whoami", shell = True))[2:-3]			# the active user
-psCommand	= ("ps -u " + activeUser)												# command to check running processes
+cronJobs	= subprocess.check_output("crontab -l", shell = True)										# jobs stored in cron
+activeUser	= str(subprocess.check_output("whoami", shell = True))[2:-3]								# the active user
+psCommand	= ("ps -u " + activeUser)																	# command to check running processes
 
 def go():
 	while 7 == 7:
-		processes = str(subprocess.check_output(psCommand, shell = True))			# check running processes
-		doIt = randrange(0, 2)														# gen no between 0 and 2
-		if doIt == 0:																# If doIt is 0 (33.3 percent of the time)
+		processes = str(subprocess.check_output(psCommand, shell = True))								# check running processes
+		doIt = randrange(0, 2)																			# gen no between 0 and 2
+		if doIt == 0:																					# If doIt is 0 (33.3 percent of the time)
 			if "Word" in processes:
-				time.sleep(900)														# wait 15 mins
-				os.system("pkill Word")												# force quit Word
+				time.sleep(900)																			# wait 15 mins
+				os.system("pkill Word")																	# force quit Word
 			elif "Pages" in processes:
 				time.sleep(900)
 				os.system("pkill Pages")
@@ -33,9 +33,9 @@ def go():
 				os.system("pkill Keynote")
 
 
-if os.path.realpath(__file__) in str(cronJobs):										# already in cron
+if os.path.realpath(__file__) in str(cronJobs):															# already in cron
 	go()
-else:																				# not in cron
-	os.system("line=\"" + os.path.realpath(__file__) + "\"")						# set script path as line variable (in shell)
+else:																									# not in cron
+	os.system("line=\"" + os.path.realpath(__file__) + "\"")											# set script path as line variable (in shell)
 	os.system("(crontab -u " + activeUser + " -l; echo \"$line\" ) | crontab -u " + activeUser + " -")	# add $line to cron
 	go()
