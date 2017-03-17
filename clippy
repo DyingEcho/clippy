@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 'Clippy' by Theo Court
+# HAVE A LOT OF FUN.
 import os
 import subprocess
 import time
